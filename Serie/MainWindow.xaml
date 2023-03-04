@@ -1,0 +1,47 @@
+﻿<Window x:Class="Serie.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Serie"
+        mc:Ignorable="d"
+        Title="Serie" Height="450" Width="500" MinHeight="450" MinWidth="500">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center"><Run Language="pl-pl" Text="Data"/></TextBlock>
+        <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center"><Run Language="pl-pl" Text="Rodzaj ćwiczenia"/></TextBlock>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,0,10,0"><Run Language="pl-pl" Text="Numer serii"/></TextBlock>
+        <TextBlock HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center"><Run Language="pl-pl" Text="Liczba powtórzeń"/></TextBlock>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,0,10,0"><Run Text="Waga ob"/><Run Text="ci"/><Run Text="ążenia"/><Run Text=" (kg)"/></TextBlock>
+        <Button Padding="5" Content="Zobacz zapisane serie" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="6" VerticalAlignment="Center" x:Name="ZobaczSerie_wartosc" Click="ZobaczSerie_Click"/>
+        
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" x:Name="Data"/>
+        <ComboBox Grid.Column="1" Padding="4" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="120" Height="25" SelectionChanged="Rodzaj_cwiczenia" x:Name="RodzajCwiczenia"/>
+        <TextBox Grid.Column="1" Padding="4" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" TextChanged="Numer_serii" x:Name="NumerSerii_wartosc"/>
+        <TextBox Grid.Column="1" Padding="4" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" x:Name="LiczbaPowtorzen_wartosc" TextChanged="Liczba_powtorzen"/>
+        <TextBox Grid.Column="1" Padding="4" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" TextChanged="Waga_obciazenia" x:Name="WagaObciazenia_wartosc"/>
+        <Button Grid.Column="1" Padding="5" Content="Zapisz / Przejdź do kolejnej serii" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="6" VerticalAlignment="Center" x:Name="NastepnaSeria_wartosc" Click="NastepnaSeria_Click"/>
+        
+        
+    </Grid>
+</Window>

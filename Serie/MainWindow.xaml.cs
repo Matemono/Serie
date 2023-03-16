@@ -31,13 +31,14 @@ namespace Serie
             lista_cwiczen.Add("sztanga");
             lista_cwiczen.Add("bicki");
             lista_cwiczen.Add("brzuszki");
+            lista_cwiczen.Add("podciągniecia");
 
             RodzajCwiczenia.ItemsSource= lista_cwiczen;
 
             Data.Text = dzis.ToString("d");
 
         }
-        static DateTime dzis = DateTime.Today;
+       static DateTime dzis = DateTime.Today;
 
         public String data = dzis.ToString("d");
         public String rodzaj_cwiczenia = ""; 
@@ -61,10 +62,7 @@ namespace Serie
             catch (Exception)
             {
                 NumerSerii_wartosc.Clear();
-                //NumerSerii_wartosc.Text = NumerSerii_wartosc.Text.Remove(NumerSerii_wartosc.Text.Length);
-                //MessageBox.Show("Podano zły format dancyh !");
-            }
-                        
+            }        
         }
 
         private void Liczba_powtorzen(object sender, TextChangedEventArgs e)
@@ -78,7 +76,6 @@ namespace Serie
             catch (Exception)
             {
                 LiczbaPowtorzen_wartosc.Clear();
-                //MessageBox.Show("Podano zły format dancyh !");
             }
         }
 
@@ -91,7 +88,6 @@ namespace Serie
             catch (Exception)
             {
                 WagaObciazenia_wartosc.Clear();
-                //MessageBox.Show("Podano zły format dancyh !");
             }
         }
 
@@ -99,25 +95,15 @@ namespace Serie
         {
             Seria seria = new Seria(data,rodzaj_cwiczenia,numer_serii,liczba_powtorzen,waga_obciazenia);
             
-            Seria.Zapisz(seria);
+            _ = Seria.Zapisz(seria);
             MessageBox.Show("Zapisano");
-
-            
-
-            //String rodzaj_cwiczenia_do_bazy_danych = RodzajCwiczenia.SelectedItem.ToString(); // pobiera wybrany rodzaj cwiczenia
-
-            //MessageBox.Show(rodzaj_cwiczenia);
-            /*
-            using (StreamWriter writer = new StreamWriter("Seria.txt"))
-            {
-                writer.Write(numer_serii);
-            }
-            */
         }
 
         private void ZobaczSerie_Click(object sender, RoutedEventArgs e)
         {
+            Podgląd_serii podgląd_Serii = new Podgląd_serii();
 
+            podgląd_Serii.ShowDialog();
         }
     }
 }

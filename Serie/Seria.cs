@@ -10,27 +10,32 @@ namespace Serie
 {
     class Seria
     {
-        private String data;
-        private String rodzaj_cwiczenia;
-        private int numer_serii;
-        private int liczba_powtorzen;
-        private int waga_obciazenia;
+        public String Data { get; set; }
+        public String Rodzaj_cwiczenia { get; set; }
+        public int Numer_serii { get; set; }
+        public int Liczba_powtorzen { get; set; }
+        public int Waga_obciazenia { get; set; }
 
-        public Seria(String data, String rodzaj_cwiczenia, int numer_serii, int liczba_powtorzen, int waga_obciazenia) 
+
+        public Seria(String _data, String _rodzaj_cwiczenia, int _numer_serii, int _liczba_powtorzen, int _waga_obciazenia) 
         {
-            this.data = data;
-            this.rodzaj_cwiczenia = rodzaj_cwiczenia;
-            this.numer_serii = numer_serii;
-            this.liczba_powtorzen = liczba_powtorzen;
-            this.waga_obciazenia = waga_obciazenia;
+            this.Data = _data;
+            this.Rodzaj_cwiczenia = _rodzaj_cwiczenia;
+            this.Numer_serii = _numer_serii;
+            this.Liczba_powtorzen = _liczba_powtorzen;
+            this.Waga_obciazenia = _waga_obciazenia;
         }
+        
 
         public static async Task Zapisz(Seria seria)
         {
-            String linia_do_zapisu = seria.data + " " + seria.rodzaj_cwiczenia + " " + seria.numer_serii + " " + seria.liczba_powtorzen + " " + seria.waga_obciazenia + " ";
-            using StreamWriter file = new("Serie_cwiczen.txt", append: true);
-            await file.WriteLineAsync(linia_do_zapisu);
+            String linia_do_zapisu = seria.Data + " " + seria.Rodzaj_cwiczenia + " " + seria.Numer_serii + " " + seria.Liczba_powtorzen + " " + seria.Waga_obciazenia + " ";
+            using StreamWriter plik = new("Serie_cwiczen.txt", append: true);
+            await plik.WriteLineAsync(linia_do_zapisu);
             
         }
+
+        
+
     }
 }
